@@ -5,7 +5,6 @@ import pl.abala.Entity.Element;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Repository
@@ -26,6 +25,7 @@ public class ElementRepository implements ElementDao {
                 put(10, new Element(10, 20.1797, "Ne", "Neon"));
                 put(11, new Element(11, 22.98977, "Na", "Sodium"));
                 put(12, new Element(12, 24.305, "Mg", "Magnesium"));
+                put(13, new Element(13, 26.98154, "Al", "Aluminum"));
             }
         };
     }
