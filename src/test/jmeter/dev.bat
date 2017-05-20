@@ -1,1 +1,1 @@
-jmeter -n -t prtbl.jmx -l "..\..\..\target\jmeter-log\prtbl.log" -e -o "..\..\..\target\jmeter-output"
+$1 -n -t prtbl.jmx -l "..\..\..\target\jmeter-log\prtbl.log" -e -o "..\..\..\target\jmeter-output"

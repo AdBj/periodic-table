@@ -1,5 +1,4 @@
 .gradle
-.bat
 prtbl_rsa
 prtbl_rsa.pub
 bin/
