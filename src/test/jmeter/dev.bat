@@ -1,1 +1,1 @@
-".\apache-jmeter-3.2\bin\jmeter" -n -t ".\prtbl.jmx" -l "..\..\..\target\jmeter-log\prtbl.log" -e -o "..\..\..\target\jmeter-output"
+"./src/test/jmeter/apache-jmeter-3.2/bin/jmeter" -n -t "./prtbl.jmx" -l "../../../target/jmeter-log/prtbl.log" -e -o "../../../target/jmeter-output"
