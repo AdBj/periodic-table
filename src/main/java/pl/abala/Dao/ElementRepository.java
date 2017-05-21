@@ -36,6 +36,7 @@ public class ElementRepository implements ElementDao {
                 put(21, new Element(21, 44.9559, "Sc", "Scandium"));
                 put(22, new Element(22, 47.88, "Ti", "Titanium"));
                 put(23, new Element(23, 50.9415, "V", "Vanadium"));
+                put(24, new Element(24, 51.996, "Cr", "Chromium"));
             }
         };
     }
