@@ -4,7 +4,7 @@ id_rsa.pub
 bin/
 scratch/
 target/
-logs/
+logs/**/*.log
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
