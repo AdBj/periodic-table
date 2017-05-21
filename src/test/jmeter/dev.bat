@@ -1,1 +1,1 @@
-".\apache-jmeter-3.2\bin\jmeter" -n -t ".\prtbl.jmx" -l "..\..\..\target\jmeter-log\prtbl.log" -e -o "..\..\..\target\jmeter-output"
+jmeter -t ./tests/prtbl.jmx -q ./properties/misc.properties -q ./properties/env/dev.properties

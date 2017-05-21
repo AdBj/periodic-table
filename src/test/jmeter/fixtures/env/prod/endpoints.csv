@@ -1,0 +1,8 @@
+type,endpoint,code,response,comment
+"+","/",200,"Hello","Simple test"
+"+","/elements",200,"Hello","All elements"
+"+","/elements/1",200,"H","Hydrogen"
+"+","/elements/2",200,"He","Helium"
+"+","/elements/3",200,"Li","Lithium"
+"-","/elements/null",400,"null","Bad request"
+"-","/null",404,"/null","URL not found"
