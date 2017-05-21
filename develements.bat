@@ -1,0 +1,1 @@
+jmeter -t ./src/test/jmeter/tests/elements.jmx -q ./src/test/jmeter/properties/misc.properties -q ./src/test/jmeter/properties/env/dev.properties

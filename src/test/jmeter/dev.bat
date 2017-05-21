@@ -1,1 +1,0 @@
-jmeter -t ./tests/prtbl.jmx -q ./properties/misc.properties -q ./properties/env/dev.properties
