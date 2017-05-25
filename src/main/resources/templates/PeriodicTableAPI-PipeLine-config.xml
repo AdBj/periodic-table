@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.11">
+  <actions/>
+  <description>Pipeline for periodic-table project</description>
+  <displayName>Periodic Table API</displayName>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <org.jenkinsci.plugins.workflow.job.properties.DisableConcurrentBuildsJobProperty/>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.27.0">
+      <projectUrl>https://github.com/AdBj/periodic-table/</projectUrl>
+      <displayName></displayName>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers>
+        <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.27.0">
+          <spec></spec>
+        </com.cloudbees.jenkins.GitHubPushTrigger>
+        <hudson.triggers.SCMTrigger>
+          <spec>* * * * *</spec>
+          <ignorePostCommitHooks>false</ignorePostCommitHooks>
+        </hudson.triggers.SCMTrigger>
+      </triggers>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.30">
+    <script>node {
+    stage(&apos;checkout&apos;) {
+        git &apos;https://github.com/AdBj/periodic-table.git&apos;
+    }
+    stage(&apos;sonar&apos;) {
+        build job: &apos;prtbl-sonar&apos;
+    }
+    stage(&apos;pitest&apos;) {
+        bat &apos;mvn clean test org.pitest:pitest-maven:mutationCoverage&apos;
+        // build job: &apos;prtbl-mutational&apos;
+    }
+    stage(&apos;build&apos;) {
+        bat &apos;mvn clean compile install package&apos;
+    }
+    stage(&apos;dev&apos;) {
+        parallel run: {
+            bat &apos;java -jar target/prtbl-0.0.1-SNAPSHOT.jar&apos;
+        }, test: {
+            sleep 15
+            build job: &apos;prtbl-test&apos;
+        },
+        failFast: true
+    }
+    stage(&apos;prod&apos;) {
+        parallel run: {
+            build job: &apos;prtbl-deploy&apos;
+        }, test: {
+            sleep 15
+            build job: &apos;prtbl-test&apos;, parameters: [[$class: &apos;StringParameterValue&apos;, name: &apos;env&apos;, value: &apos;prod&apos;]]
+        },
+        failFast: true
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>
