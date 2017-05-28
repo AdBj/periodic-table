@@ -11,16 +11,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(MockitoJUnitRunner.class)
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class SpringApplicationTest {
     @Mock
-    private SpringApplication springApplication;
+    private PeriodicTableApplication periodicTableApplication;
 
     @Test
-    public void runSpringApplication() throws Exception {
-        //SpringApplication.run( InitialFileBatchApplication.class, args);
+    public void runPeriodicTableApplication() throws Exception {
         String[] args = {""};
-        SpringApplication.run(PeriodicTableApplication.class, args);
-        assertThat(springApplication).isNotNull();
+        periodicTableApplication.main(args);
+        assertThat(periodicTableApplication).isNotNull();
     }
 }
