@@ -12,7 +12,7 @@ public class ElementRepository implements ElementDao {
     private static Map<Integer, Element> periodicTable;
 
     static {
-        periodicTable = new HashMap<Integer, Element>();
+        periodicTable = new HashMap<>();
         periodicTable.put(1, new Element(1, 1.00794, "H", "Hydrogen"));
         periodicTable.put(2, new Element(2, 4.0026, "He", "Helium"));
         periodicTable.put(3, new Element(3, 6.941, "Li", "Lithium"));
@@ -44,6 +44,7 @@ public class ElementRepository implements ElementDao {
         periodicTable.put(30, new Element(30, 65.39, "Zn", "Zinc"));
         periodicTable.put(31, new Element(31, 69.723, "Ga", "Gallium"));
         periodicTable.put(32, new Element(32, 72.61, "Ge", "Germanium"));
+        periodicTable.put(33, new Element(33, 74.9216, "As", "Arsenic"));
     }
 
     @Override

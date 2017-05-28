@@ -12,7 +12,7 @@ import pl.abala.controller.HomeController;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = PeriodicTableApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class PeriodicTableApplicationTests {
     @LocalServerPort
     private int port;
