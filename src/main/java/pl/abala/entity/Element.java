@@ -1,16 +1,13 @@
-package pl.abala.Entity;
+package pl.abala.entity;
 
 import org.springframework.data.annotation.Id;
 
-/**
- * Created by AdB on 23.04.2017.
- */
 public class Element {
     @Id
-    int atomicNumber;
-    double atomicMass;
-    String symbol;
-    String name;
+    private int atomicNumber;
+    private double atomicMass;
+    private String symbol;
+    private String name;
 
     public Element(int atomicNumber, double atomicMass, String symbol, String name) {
         this.atomicNumber = atomicNumber;

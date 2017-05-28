@@ -1,17 +1,13 @@
-package pl.abala.Controller;
+package pl.abala.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import pl.abala.Entity.Element;
-import pl.abala.Service.ElementService;
+import pl.abala.entity.Element;
+import pl.abala.service.ElementService;
 
-import java.awt.*;
 import java.util.Collection;
 
-/**
- * Created by AdB on 24.04.2017.
- */
 @RestController
 @RequestMapping("/elements")
 public class ElementContoller {

@@ -1,4 +1,4 @@
-package pl.abala.Controller;
+package pl.abala.controller;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,10 +13,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-/**
- * Created by abala on 5/25/2017.
- */
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

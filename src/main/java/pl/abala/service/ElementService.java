@@ -1,15 +1,12 @@
-package pl.abala.Service;
+package pl.abala.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.abala.Dao.ElementDao;
-import pl.abala.Entity.Element;
+import pl.abala.dao.ElementDao;
+import pl.abala.entity.Element;
 
 import java.util.Collection;
 
-/**
- * Created by AdB on 23.04.2017.
- */
 @Service
 public class ElementService {
     @Autowired

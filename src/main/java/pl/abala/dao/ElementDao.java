@@ -1,12 +1,9 @@
-package pl.abala.Dao;
+package pl.abala.dao;
 
-import pl.abala.Entity.Element;
+import pl.abala.entity.Element;
 
 import java.util.Collection;
 
-/**
- * Created by AdB on 23.04.2017.
- */
 public interface ElementDao {
     Collection<Element> getPeriodicTable();
     Element getElementByAtomicNumber(int atomicNumber);
