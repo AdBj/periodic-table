@@ -47,6 +47,7 @@ public class ElementRepository implements ElementDao {
         periodicTable.put(33, new Element(33, 74.9216, "As", "Arsenic"));
         periodicTable.put(34, new Element(34, 78.96, "Se", "Selenium"));
         periodicTable.put(35, new Element(35, 79.904, "Br", "Bromine"));
+        periodicTable.put(36, new Element(36, 83.8, "Kr", "Krypton"));
     }
 
     @Override
