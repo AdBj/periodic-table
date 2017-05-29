@@ -2,9 +2,10 @@
 id_rsa
 id_rsa.pub
 bin/
+junit/
+logs/
 scratch/
 target/
-logs/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###

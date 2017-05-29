@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<testsuite name="bzt_pass_fail" package="bzt">
-  <testcase classname="bzt-4548030" name="avg-rt of IndexPage&gt;150ms for 5s"/>
-  <testcase classname="bzt-4548030" name="fail of CheckoutPage&gt;50% for 5s"/>
-</testsuite>
