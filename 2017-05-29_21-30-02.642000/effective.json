@@ -1,0 +1,430 @@
+{
+ "settings": {
+  "check-updates": true, 
+  "check-interval": 1, 
+  "aggregator": "consolidator", 
+  "default-executor": "jmeter", 
+  "proxy": {}, 
+  "artifacts-dir": "%Y-%m-%d_%H-%M-%S.%f", 
+  "hostaliases": {}
+ }, 
+ "reporting": [
+  {
+   "dump-csv": null, 
+   "module": "final_stats", 
+   "summary": true, 
+   "test-duration": true, 
+   "percentiles": true, 
+   "dump-xml": null, 
+   "failed-labels": false
+  }, 
+  {
+   "module": "console"
+  }, 
+  {
+   "data-source": "pass-fail", 
+   "module": "junit-xml", 
+   "filename": ".\\junit\\prtbl-prod.xml"
+  }, 
+  {
+   "criteria": [
+    {
+     "logic": "for", 
+     "stop": true, 
+     "label": "IndexPage", 
+     "threshold": "150ms", 
+     "timeframe": "5s", 
+     "fail": true, 
+     "message": null, 
+     "condition": ">", 
+     "subject": "avg-rt"
+    }, 
+    {
+     "logic": "for", 
+     "stop": true, 
+     "label": "CheckoutPage", 
+     "threshold": "50%", 
+     "timeframe": "5s", 
+     "fail": true, 
+     "message": null, 
+     "condition": ">", 
+     "subject": "fail"
+    }
+   ], 
+   "module": "passfail", 
+   "criterias": []
+  }
+ ], 
+ "modules": {
+  "ab": {
+   "class": "bzt.modules.ab.ApacheBenchmarkExecutor"
+  }, 
+  "proxy2jmx": {
+   "class": "bzt.modules.proxy2jmx.Proxy2JMX"
+  }, 
+  "final_stats": {
+   "class": "bzt.modules.reporting.FinalStatus"
+  }, 
+  "blazemeter": {
+   "class": "bzt.modules.blazemeter.BlazeMeterUploader"
+  }, 
+  "cloud": {
+   "use-deprecated-api": true, 
+   "check-interval": "5s", 
+   "class": "bzt.modules.blazemeter.CloudProvisioning", 
+   "default-location": "us-central1-a"
+  }, 
+  "install-checker": {
+   "class": "bzt.modules.services.InstallChecker"
+  }, 
+  "grinder": {
+   "path": "~/.bzt/grinder-taurus/lib/grinder.jar", 
+   "class": "bzt.modules.grinder.GrinderExecutor", 
+   "properties": {
+    "grinder.useConsole": false
+   }
+  }, 
+  "chrome-metric-reporter": {
+   "class": "bzt.modules.chrome.MetricReporter"
+  }, 
+  "selenium": {
+   "selenium-tools": {
+    "mocha": {
+     "tools-dir": "~/.bzt/selenium-taurus/mocha"
+    }, 
+    "nose": {
+     "working-dir": "classes"
+    }, 
+    "junit": {
+     "working-dir": "classes", 
+     "json-jar": "~/.bzt/selenium-taurus/tools/junit/json.jar", 
+     "jar-name": "compiled.jar", 
+     "hamcrest-core": "~/.bzt/selenium-taurus/tools/junit/hamcrest-core.jar", 
+     "path": "~/.bzt/selenium-taurus/tools/junit/junit.jar", 
+     "selenium-server": "~/.bzt/selenium-taurus/selenium-server.jar"
+    }, 
+    "rspec": {
+     "interpreter": "ruby"
+    }, 
+    "testng": {
+     "working-dir": "classes", 
+     "json-jar": "~/.bzt/selenium-taurus/tools/testng/json.jar", 
+     "jar-name": "compiled.jar", 
+     "hamcrest-core": "~/.bzt/selenium-taurus/tools/testng/hamcrest-core.jar", 
+     "path": "~/.bzt/selenium-taurus/tools/testng/testng.jar", 
+     "selenium-server": "~/.bzt/selenium-taurus/selenium-server.jar"
+    }
+   }, 
+   "class": "bzt.modules.selenium.SeleniumExecutor"
+  }, 
+  "console": {
+   "screen": "console", 
+   "disable": "auto", 
+   "class": "bzt.modules.console.ConsoleStatusReporter"
+  }, 
+  "tsung": {
+   "class": "bzt.modules.tsung.TsungExecutor"
+  }, 
+  "gatling": {
+   "class": "bzt.modules.gatling.GatlingExecutor", 
+   "properties": {
+    "gatling.data.file.bufferSize": 256
+   }
+  }, 
+  "capturehar": {
+   "class": "bzt.modules.blazemeter.ServiceStubCaptureHAR"
+  }, 
+  "shellexec": {
+   "class": "bzt.modules.shellexec.ShellExecutor"
+  }, 
+  "consolidator": {
+   "max-buffer-len": Infinity, 
+   "buffer-multiplier": 2, 
+   "generalize-labels": false, 
+   "min-buffer-len": 2, 
+   "percentiles": [
+    0, 
+    50, 
+    90, 
+    95, 
+    99, 
+    99.9, 
+    100
+   ], 
+   "rtimes-len": 1000, 
+   "buffer-scale-choice": 0.5, 
+   "ignore-labels": [
+    "ignore"
+   ], 
+   "class": "bzt.modules.aggregator.ConsolidatingAggregator"
+  }, 
+  "chrome-profiler": {
+   "class": "bzt.modules.chrome.ChromeProfiler", 
+   "processors": {
+    "trace": {
+     "extractors": [
+      "bzt.modules.chrome.TabNameExtractor", 
+      "bzt.modules.chrome.MemoryMetricsExtractor"
+     ], 
+     "class": "bzt.modules.chrome.TraceProcessor"
+    }
+   }
+  }, 
+  "siege": {
+   "class": "bzt.modules.siege.SiegeExecutor"
+  }, 
+  "pbench": {
+   "class": "bzt.modules.pbench.PBenchExecutor"
+  }, 
+  "monitoring": {
+   "class": "bzt.modules.monitoring.Monitoring"
+  }, 
+  "functional-consolidator": {
+   "class": "bzt.modules.functional.FunctionalAggregator"
+  }, 
+  "unpacker": {
+   "class": "bzt.modules.services.Unpacker"
+  }, 
+  "local": {
+   "sequential": false, 
+   "class": "bzt.modules.provisioning.Local"
+  }, 
+  "locust": {
+   "class": "bzt.modules.locustio.LocustIOExecutor"
+  }, 
+  "screenshoter": {
+   "class": "bzt.modules.blazemeter.ServiceStubScreenshoter"
+  }, 
+  "passfail": {
+   "class": "bzt.modules.passfail.PassFailStatus"
+  }, 
+  "jmeter": {
+   "properties": {
+    "jmeter.save.saveservice.autoflush": "true", 
+    "jmeter.save.saveservice.connect_time": "true", 
+    "user.classpath": "C:/dev/projects/periodic-table/2017-05-29_21-30-02.642000", 
+    "sampleresult.default.encoding": "UTF-8", 
+    "summariser.name": "", 
+    "jmeterengine.force.system.exit": "true", 
+    "jmeter.save.saveservice.timestamp_format": "ms", 
+    "mode": "Stripped", 
+    "jmeterengine.nongui.maxport": 4445, 
+    "jmeterengine.nongui.port": 4445
+   }, 
+   "version": "3.1", 
+   "gui": false, 
+   "class": "bzt.modules.jmeter.JMeterExecutor", 
+   "system-properties": {
+    "sun.net.inetaddr.ttl": 0
+   }, 
+   "memory-xmx": null, 
+   "download-link": null, 
+   "plugins": [
+    "jpgc-casutg", 
+    "jpgc-dummy", 
+    "jpgc-ffw", 
+    "jpgc-fifo", 
+    "jpgc-functions", 
+    "jpgc-json", 
+    "jpgc-perfmon", 
+    "jpgc-prmctl", 
+    "jpgc-tst"
+   ], 
+   "xml-jtl-flags": {}, 
+   "path": "C:\\Users\\abala\\.bzt\\jmeter-taurus\\bin\\jmeter.bat", 
+   "shutdown-wait": 5, 
+   "shutdown-port": 4445
+  }, 
+  "junit-xml": {
+   "class": "bzt.modules.reporting.JUnitXMLReporter"
+  }
+ }, 
+ "provisioning": "local", 
+ "scenarios": {
+  "simple": {
+   "think-time": 0.25, 
+   "store-cache": true, 
+   "modifications": {}, 
+   "force-parent-sample": true, 
+   "retrieve-resources": true, 
+   "content-encoding": null, 
+   "store-cookie": true, 
+   "follow-redirects": true, 
+   "retrieve-resources-regex": null, 
+   "concurrent-pool-size": 4, 
+   "headers": {}, 
+   "data-sources": [], 
+   "timeout": null, 
+   "disable-listeners": true, 
+   "requests": [
+    {
+     "think-time": null, 
+     "body": null, 
+     "follow-redirects": null, 
+     "timeout": null, 
+     "content-encoding": null, 
+     "url": "https://prtbl.herokuapp.com/", 
+     "jsr223": null, 
+     "assert-jsonpath": [], 
+     "extract-xpath": {}, 
+     "upload-files": [], 
+     "label": "https://prtbl.herokuapp.com/", 
+     "assert": [], 
+     "headers": {}, 
+     "assert-xpath": [], 
+     "body-file": null, 
+     "extract-regexp": {}, 
+     "method": "GET", 
+     "extract-css-jquery": {}, 
+     "extract-jsonpath": {}
+    }, 
+    {
+     "think-time": null, 
+     "body": null, 
+     "follow-redirects": null, 
+     "timeout": null, 
+     "content-encoding": null, 
+     "url": "https://prtbl.herokuapp.com/elements/", 
+     "jsr223": null, 
+     "assert-jsonpath": [], 
+     "extract-xpath": {}, 
+     "upload-files": [], 
+     "label": "https://prtbl.herokuapp.com/elements/", 
+     "assert": [], 
+     "headers": {}, 
+     "assert-xpath": [], 
+     "body-file": null, 
+     "extract-regexp": {}, 
+     "method": "GET", 
+     "extract-css-jquery": {}, 
+     "extract-jsonpath": {}
+    }, 
+    {
+     "think-time": null, 
+     "body": null, 
+     "follow-redirects": null, 
+     "timeout": null, 
+     "content-encoding": null, 
+     "url": "https://prtbl.herokuapp.com/elements/1", 
+     "jsr223": null, 
+     "assert-jsonpath": [], 
+     "extract-xpath": {}, 
+     "upload-files": [], 
+     "label": "https://prtbl.herokuapp.com/elements/1", 
+     "assert": [], 
+     "headers": {}, 
+     "assert-xpath": [], 
+     "body-file": null, 
+     "extract-regexp": {}, 
+     "method": "GET", 
+     "extract-css-jquery": {}, 
+     "extract-jsonpath": {}
+    }
+   ], 
+   "default-address": null, 
+   "variables": {}, 
+   "properties": {
+    "jmeterengine.nongui.port": 4445, 
+    "sampleresult.default.encoding": "UTF-8", 
+    "jmeter.save.saveservice.timestamp_format": "ms", 
+    "jmeterengine.nongui.maxport": 4445
+   }, 
+   "use-dns-cache-mgr": true, 
+   "keepalive": true
+  }
+ }, 
+ "version": "1.7.5", 
+ "cli-aliases": {
+  "gui": {
+   "modules": {
+    "jmeter": {
+     "gui": true
+    }
+   }
+  }, 
+  "locations": {
+   "modules": {
+    "cloud": {
+     "dump-locations": true
+    }
+   }, 
+   "provisioning": "cloud"
+  }, 
+  "sequential": {
+   "modules": {
+    "local": {
+     "sequential": true
+    }
+   }
+  }, 
+  "func": {
+   "settings": {
+    "aggregator": "functional-consolidator"
+   }
+  }, 
+  "report": {
+   "reporting": [
+    "blazemeter"
+   ]
+  }, 
+  "install-tools": {
+   "services": [
+    "install-checker"
+   ]
+  }, 
+  "detach": {
+   "modules": {
+    "cloud": {
+     "detach": true
+    }
+   }
+  }, 
+  "local": {
+   "provisioning": "local"
+  }, 
+  "cloud": {
+   "provisioning": "cloud"
+  }
+ }, 
+ "install-id": "94659c2925c4", 
+ "services": [
+  {
+   "run-at": "local", 
+   "local": [
+    {
+     "metrics": [
+      "cpu", 
+      "mem", 
+      "bytes-sent", 
+      "bytes-recv", 
+      "disk-read", 
+      "disk-write", 
+      "disk-space", 
+      "engine-loop"
+     ]
+    }
+   ], 
+   "module": "monitoring"
+  }
+ ], 
+ "execution": [
+  {
+   "concurrency": {
+    "local": 10
+   }, 
+   "scenario": "simple", 
+   "ramp-up": "10s", 
+   "start-at": 0, 
+   "distributed": [], 
+   "delay": 0, 
+   "throughput": {
+    "local": null
+   }, 
+   "write-xml-jtl": "error", 
+   "iterations": null, 
+   "executor": "jmeter", 
+   "steps": null, 
+   "hold-for": "30s"
+  }
+ ]
+}

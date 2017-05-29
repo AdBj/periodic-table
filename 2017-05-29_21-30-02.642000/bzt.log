@@ -1,0 +1,965 @@
+[2017-05-29 21:30:02,424 INFO root] Taurus CLI Tool v1.7.5
+[2017-05-29 21:30:02,424 DEBUG root] Command-line options: {'verbose': None, 'no_system_configs': None, 'quiet': None, 'log': 'bzt.log', 'option': None, 'aliases': []}
+[2017-05-29 21:30:02,424 DEBUG root] Python: CPython 2.7.12
+[2017-05-29 21:30:02,424 DEBUG root] OS: ('Windows', 'GPLPL0050', '10', '10.0.14393', 'AMD64', 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel')
+[2017-05-29 21:30:02,424 INFO root] Starting with configs: ['./src/test/taurus/prtbl-prod.yml']
+[2017-05-29 21:30:02,424 INFO Engine] Configuring...
+[2017-05-29 21:30:02,424 DEBUG Engine] Reading machine configs from: C:\etc\bzt.d
+[2017-05-29 21:30:02,424 INFO Engine] No personal config: C:\Users\abala\.bzt-rc
+[2017-05-29 21:30:02,438 DEBUG Engine.Configuration] Configs: ['C:\\etc\\bzt.d\\10-base.json', 'C:\\etc\\bzt.d\\99-installID.yml']
+[2017-05-29 21:30:02,438 DEBUG Engine.Configuration] Reading C:\etc\bzt.d\10-base.json as JSON
+[2017-05-29 21:30:02,438 DEBUG Engine.Configuration] Reading C:\etc\bzt.d\99-installID.yml as YAML
+[2017-05-29 21:30:02,438 DEBUG Engine.Configuration] Configs: ['./src/test/taurus/prtbl-prod.yml']
+[2017-05-29 21:30:02,438 DEBUG Engine.Configuration] Reading ./src/test/taurus/prtbl-prod.yml as YAML
+[2017-05-29 21:30:02,438 DEBUG root] Configs: ['./src/test/taurus/prtbl-prod.yml']
+[2017-05-29 21:30:02,438 DEBUG root] Reading ./src/test/taurus/prtbl-prod.yml as YAML
+[2017-05-29 21:30:02,454 DEBUG Engine] Requesting updates info: http://gettaurus.org/updates/?version=1.7.5&installID=94659c2925c4
+[2017-05-29 21:30:02,627 DEBUG Engine] Result: {"latest":"1.9.2","needsUpgrade":true}
+[2017-05-29 21:30:02,627 WARNING Engine] There is newer version of Taurus 1.9.2 available, consider upgrading
+[2017-05-29 21:30:02,641 INFO Engine] Artifacts dir: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000
+[2017-05-29 21:30:02,641 DEBUG Engine] New artifact filename: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\effective
+[2017-05-29 21:30:02,641 DEBUG Engine.Configuration] Dumping YAML config into C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\effective.yml
+[2017-05-29 21:30:02,657 DEBUG Engine.Configuration] Dumping JSON config into C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\effective.json
+[2017-05-29 21:30:02,674 DEBUG Engine] New artifact filename: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\merged.yml
+[2017-05-29 21:30:02,674 DEBUG root] Dumping YAML config into C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\merged.yml
+[2017-05-29 21:30:02,674 DEBUG Engine] New artifact filename: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\merged.json
+[2017-05-29 21:30:02,674 DEBUG root] Dumping JSON config into C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\merged.json
+[2017-05-29 21:30:02,674 DEBUG Engine] Add existing artifact (move=False): ./src/test/taurus/prtbl-prod.yml
+[2017-05-29 21:30:02,674 DEBUG Engine] Copying ./src/test/taurus/prtbl-prod.yml to C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\prtbl-prod.yml
+[2017-05-29 21:30:02,674 INFO Engine] Preparing...
+[2017-05-29 21:30:02,688 DEBUG Engine] Module config: consolidator defaultdict(None, {u'ignore-labels': [u'ignore'], u'percentiles': [0.0, 50.0, 90.0, 95.0, 99.0, 99.9, 100.0], u'class': u'bzt.modules.aggregator.ConsolidatingAggregator'})
+[2017-05-29 21:30:02,688 DEBUG root] Importing module: bzt.modules.aggregator
+[2017-05-29 21:30:02,688 DEBUG root] Loading class: 'ConsolidatingAggregator' from <module 'bzt.modules.aggregator' from 'C:\Program Files\Common Files\Python\2.7\lib\site-packages\bzt\modules\aggregator.pyc'>
+[2017-05-29 21:30:02,688 DEBUG Engine.consolidator] Exception in dehumanize_time(inf)
+[2017-05-29 21:30:02,688 DEBUG Engine.consolidator] Buffer scaling setup: percentile 95.0 from [0.0, 50.0, 90.0, 95.0, 99.0, 99.9, 100.0] selected
+[2017-05-29 21:30:02,688 DEBUG Engine] Module config: monitoring defaultdict(None, {u'class': u'bzt.modules.monitoring.Monitoring'})
+[2017-05-29 21:30:02,688 DEBUG root] Importing module: bzt.modules.monitoring
+[2017-05-29 21:30:02,766 DEBUG root] Loading class: 'Monitoring' from <module 'bzt.modules.monitoring' from 'C:\Program Files\Common Files\Python\2.7\lib\site-packages\bzt\modules\monitoring.pyc'>
+[2017-05-29 21:30:02,766 DEBUG Engine] Module config: local defaultdict(None, {u'class': u'bzt.modules.provisioning.Local'})
+[2017-05-29 21:30:02,766 DEBUG root] Importing module: bzt.modules.provisioning
+[2017-05-29 21:30:02,766 DEBUG root] Loading class: 'Local' from <module 'bzt.modules.provisioning' from 'C:\Program Files\Common Files\Python\2.7\lib\site-packages\bzt\modules\provisioning.pyc'>
+[2017-05-29 21:30:02,766 DEBUG Engine] Module config: jmeter defaultdict(None, {u'path': u'~/.bzt/jmeter-taurus/', u'plugins': [u'jpgc-casutg', u'jpgc-dummy', u'jpgc-ffw', u'jpgc-fifo', u'jpgc-functions', u'jpgc-json', u'jpgc-perfmon', u'jpgc-prmctl', u'jpgc-tst'], u'properties': defaultdict(None, {u'jmeter.save.saveservice.autoflush': u'true', u'jmeterengine.force.system.exit': u'true', u'jmeter.save.saveservice.connect_time': u'true', u'summariser.name': u'', u'mode': u'Stripped'}), u'class': u'bzt.modules.jmeter.JMeterExecutor'})
+[2017-05-29 21:30:02,766 DEBUG root] Importing module: bzt.modules.jmeter
+[2017-05-29 21:30:02,799 DEBUG root] Loading class: 'JMeterExecutor' from <module 'bzt.modules.jmeter' from 'C:\Program Files\Common Files\Python\2.7\lib\site-packages\bzt\modules\jmeter.pyc'>
+[2017-05-29 21:30:02,799 DEBUG Engine.local] Preparing executor: jmeter/71858216
+[2017-05-29 21:30:02,799 DEBUG Engine] New artifact filename: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\jmeter.log
+[2017-05-29 21:30:02,799 DEBUG Engine.jmeter] Checking if port 4445 is free
+[2017-05-29 21:30:02,799 DEBUG Engine.jmeter] Port 4445 is free
+[2017-05-29 21:30:02,799 DEBUG Engine.jmeter] Using port 4445 for management
+[2017-05-29 21:30:02,799 DEBUG Engine.jmeter.JavaVM] Trying JavaVM: ['java', '-version']
+[2017-05-29 21:30:02,946 DEBUG Engine.jmeter.JavaVM] JavaVM output: java version "1.8.0_131"
+Java(TM) SE Runtime Environment (build 1.8.0_131-b11)
+Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)
+
+[2017-05-29 21:30:02,946 DEBUG Engine.jmeter.TclLibrary] Checking if TCL_LIBRARY variable is present in environment
+[2017-05-29 21:30:02,946 DEBUG Engine.jmeter.TclLibrary] TCL_LIBRARY environment variable is present
+[2017-05-29 21:30:02,946 DEBUG Engine.jmeter.JMeter] Trying jmeter: C:\Users\abala\.bzt\jmeter-taurus\bin\jmeter.bat
+[2017-05-29 21:30:02,946 DEBUG bzt.utils] Executing shell: [u'C:\\Users\\abala\\.bzt\\jmeter-taurus\\bin\\jmeter.bat', '-j', 'c:\\users\\abala\\appdata\\local\\temp\\jmeterpabiwnlog', '--version']
+[2017-05-29 21:30:03,559 DEBUG Engine.jmeter.JMeter] JMeter check: Writing log file to: c:\users\abala\appdata\local\temp\jmeterpabiwnlog
+    _    ____   _    ____ _   _ _____       _ __  __ _____ _____ _____ ____     
+   / \  |  _ \ / \  / ___| | | | ____|     | |  \/  | ____|_   _| ____|  _ \   
+  / _ \ | |_) / _ \| |   | |_| |  _|    _  | | |\/| |  _|   | | |  _| | |_) | 
+ / ___ \|  __/ ___ \ |___|  _  | |___  | |_| | |  | | |___  | | | |___|  _ <  
+/_/   \_\_| /_/   \_\____|_| |_|_____|  \___/|_|  |_|_____| |_| |_____|_| \_\ 3.1 r1770033  
+
+Copyright (c) 1999-2016 The Apache Software Foundation
+
+ / None
+[2017-05-29 21:30:03,559 DEBUG Engine] New artifact filename: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\requests.jmx
+[2017-05-29 21:30:03,559 DEBUG JMeterScenarioBuilder] Saving JMX to: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\requests.jmx
+[2017-05-29 21:30:03,573 DEBUG Engine.jmeter] Load: LoadSpec(concurrency=10, throughput=None, ramp_up=10.0, hold=30.0, iterations=0, duration=40.0, steps=None)
+[2017-05-29 21:30:03,573 DEBUG Engine.jmeter] Original threads: 1.0
+[2017-05-29 21:30:03,573 DEBUG Engine] New artifact filename: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:03,573 DEBUG Engine] New artifact filename: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:03,573 DEBUG Engine.jmeter] Enforcing parent sample for transaction controller
+[2017-05-29 21:30:03,573 DEBUG Engine] New artifact filename: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\modified_requests.jmx
+[2017-05-29 21:30:03,573 DEBUG JMX] Saving JMX to: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\modified_requests.jmx
+[2017-05-29 21:30:03,573 DEBUG Engine.jmeter] Additional properties: defaultdict(None, {u'jmeter.save.saveservice.autoflush': u'true', u'jmeter.save.saveservice.connect_time': u'true', 'user.classpath': 'C:/dev/projects/periodic-table/2017-05-29_21-30-02.642000', 'sampleresult.default.encoding': 'UTF-8', u'summariser.name': u'', u'jmeterengine.force.system.exit': u'true', 'jmeter.save.saveservice.timestamp_format': 'ms', u'mode': u'Stripped', 'jmeterengine.nongui.maxport': 4445, 'jmeterengine.nongui.port': 4445})
+[2017-05-29 21:30:03,573 DEBUG Engine] New artifact filename: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\jmeter-bzt.properties
+[2017-05-29 21:30:03,589 DEBUG Engine.jmeter] Additional system properties defaultdict(None, {'sun.net.inetaddr.ttl': 0})
+[2017-05-29 21:30:03,589 DEBUG Engine] New artifact filename: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\system.properties
+[2017-05-29 21:30:03,589 DEBUG Engine] Module config: final_stats defaultdict(None, {u'class': u'bzt.modules.reporting.FinalStatus'})
+[2017-05-29 21:30:03,589 DEBUG root] Importing module: bzt.modules.reporting
+[2017-05-29 21:30:03,605 DEBUG root] Loading class: 'FinalStatus' from <module 'bzt.modules.reporting' from 'C:\Program Files\Common Files\Python\2.7\lib\site-packages\bzt\modules\reporting.pyc'>
+[2017-05-29 21:30:03,605 DEBUG Engine] Module config: console defaultdict(None, {u'disable': u'auto', u'class': u'bzt.modules.console.ConsoleStatusReporter'})
+[2017-05-29 21:30:03,605 DEBUG root] Importing module: bzt.modules.console
+[2017-05-29 21:30:03,605 DEBUG root] Loading class: 'ConsoleStatusReporter' from <module 'bzt.modules.console' from 'C:\Program Files\Common Files\Python\2.7\lib\site-packages\bzt\modules\console.pyc'>
+[2017-05-29 21:30:03,605 DEBUG Engine] Module config: junit-xml defaultdict(None, {u'class': u'bzt.modules.reporting.JUnitXMLReporter'})
+[2017-05-29 21:30:03,605 DEBUG root] Importing module: bzt.modules.reporting
+[2017-05-29 21:30:03,605 DEBUG root] Loading class: 'JUnitXMLReporter' from <module 'bzt.modules.reporting' from 'C:\Program Files\Common Files\Python\2.7\lib\site-packages\bzt\modules\reporting.pyc'>
+[2017-05-29 21:30:03,605 DEBUG Engine] Module config: passfail defaultdict(None, {u'class': u'bzt.modules.passfail.PassFailStatus'})
+[2017-05-29 21:30:03,605 DEBUG root] Importing module: bzt.modules.passfail
+[2017-05-29 21:30:03,605 DEBUG root] Loading class: 'PassFailStatus' from <module 'bzt.modules.passfail' from 'C:\Program Files\Common Files\Python\2.7\lib\site-packages\bzt\modules\passfail.pyc'>
+[2017-05-29 21:30:03,605 DEBUG Engine.console] Can't use console' screen, trying 'gui'
+[2017-05-29 21:30:03,605 DEBUG root] Importing module: bzt.modules.passfail
+[2017-05-29 21:30:03,605 DEBUG root] Loading class: 'DataCriterion' from <module 'bzt.modules.passfail' from 'C:\Program Files\Common Files\Python\2.7\lib\site-packages\bzt\modules\passfail.pyc'>
+[2017-05-29 21:30:03,605 DEBUG root] Importing module: bzt.modules.passfail
+[2017-05-29 21:30:03,605 DEBUG root] Loading class: 'DataCriterion' from <module 'bzt.modules.passfail' from 'C:\Program Files\Common Files\Python\2.7\lib\site-packages\bzt\modules\passfail.pyc'>
+[2017-05-29 21:30:03,605 DEBUG Engine.Configuration] Dumping YAML config into C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\effective.yml
+[2017-05-29 21:30:03,651 DEBUG Engine.Configuration] Dumping JSON config into C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\effective.json
+[2017-05-29 21:30:03,651 INFO Engine] Starting...
+[2017-05-29 21:30:03,667 DEBUG Engine] Startup <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:03,667 DEBUG Engine] Startup <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:03,667 DEBUG Engine] Startup <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:03,667 DEBUG Engine] Startup <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:03,667 INFO Engine.console] Waiting for results...
+[2017-05-29 21:30:03,667 DEBUG Engine] Startup <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:03,667 DEBUG Engine] Startup <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:03,667 DEBUG Engine] Startup <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:03,667 DEBUG Engine.local] Delay setup for jmeter/simple: 0(start-at) + 0(delay) = 0
+[2017-05-29 21:30:03,667 DEBUG Engine.Configuration] Dumping YAML config into C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\effective.yml
+[2017-05-29 21:30:03,698 DEBUG Engine.Configuration] Dumping JSON config into C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\effective.json
+[2017-05-29 21:30:03,714 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:03,714 DEBUG bzt.utils] Executing shell: [u'C:\\Users\\abala\\.bzt\\jmeter-taurus\\bin\\jmeter.bat', '-n', '-t', 'C:\\dev\\projects\\periodic-table\\2017-05-29_21-30-02.642000\\modified_requests.jmx', '-j', 'C:\\dev\\projects\\periodic-table\\2017-05-29_21-30-02.642000\\jmeter.log', '-q', 'C:\\dev\\projects\\periodic-table\\2017-05-29_21-30-02.642000\\jmeter-bzt.properties', '-S', 'C:\\dev\\projects\\periodic-table\\2017-05-29_21-30-02.642000\\system.properties']
+[2017-05-29 21:30:03,714 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:03,714 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:03,714 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] File not appeared yet: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:03,714 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] No data to start reading yet
+[2017-05-29 21:30:03,714 DEBUG Engine.jmeter.JTLReader] Buffer len: 0
+[2017-05-29 21:30:03,714 DEBUG Engine.consolidator] Consolidator buffer[0]: []
+[2017-05-29 21:30:03,714 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:03,937 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:03,937 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:03,937 INFO Engine.console] Did not mute console logging
+[2017-05-29 21:30:04,187 INFO Engine.console] Waiting for finish...
+[2017-05-29 21:30:04,203 DEBUG root] Font: (8, 16)
+[2017-05-29 21:30:04,217 DEBUG root] Font: (8, 16)
+[2017-05-29 21:30:04,233 DEBUG root] Font: (8, 16)
+[2017-05-29 21:30:04,283 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:04,283 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:04,283 DEBUG Engine] Iteration took 0.569 sec, sleeping for 0.431 sec...
+[2017-05-29 21:30:04,714 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:04,714 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:04,716 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:04,726 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] File not appeared yet: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:04,726 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] No data to start reading yet
+[2017-05-29 21:30:04,726 DEBUG Engine.jmeter.JTLReader] Buffer len: 0
+[2017-05-29 21:30:04,727 DEBUG Engine.consolidator] Consolidator buffer[0]: []
+[2017-05-29 21:30:04,727 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:04,727 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:04,729 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:04,812 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:04,812 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:04,812 DEBUG Engine] Iteration took 0.097 sec, sleeping for 0.903 sec...
+[2017-05-29 21:30:05,723 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:05,723 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:05,723 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:05,723 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Opening file: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:05,723 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:05,723 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 1 / 117 bytes (at speed 1048576)
+[2017-05-29 21:30:05,723 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Analyzed header line: ['timeStamp', 'elapsed', 'label', 'responseCode', 'responseMessage', 'threadName', 'success', 'bytes', 'grpThreads', 'allThreads', 'Latency', 'Hostname']
+[2017-05-29 21:30:05,723 DEBUG Engine.jmeter.JTLReader] Buffer len: 0
+[2017-05-29 21:30:05,723 DEBUG Engine.consolidator] Consolidator buffer[0]: []
+[2017-05-29 21:30:05,723 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:05,723 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:05,723 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:05,790 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:05,790 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:05,790 DEBUG Engine] Iteration took 0.068 sec, sleeping for 0.932 sec...
+[2017-05-29 21:30:06,723 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:06,723 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:06,723 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:06,723 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:06,723 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 1 / 97 bytes (at speed 1048576)
+[2017-05-29 21:30:06,723 DEBUG Engine.jmeter.JTLReader] Buffer len: 1
+[2017-05-29 21:30:06,723 DEBUG Engine.consolidator] Consolidator buffer[0]: []
+[2017-05-29 21:30:06,723 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:06,729 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:06,729 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:06,763 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:06,763 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:06,763 DEBUG Engine] Iteration took 0.041 sec, sleeping for 0.959 sec...
+[2017-05-29 21:30:07,724 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:07,724 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:07,724 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:07,724 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:07,724 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 5 / 515 bytes (at speed 1048576)
+[2017-05-29 21:30:07,726 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:07,726 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086205
+[2017-05-29 21:30:07,726 DEBUG Engine.consolidator] Consolidator buffer[1]: [1496086205]
+[2017-05-29 21:30:07,726 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:07,732 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:07,732 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:07,766 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:07,766 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:07,766 DEBUG Engine] Iteration took 0.042 sec, sleeping for 0.958 sec...
+[2017-05-29 21:30:08,723 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:08,723 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:08,723 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:08,723 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:08,723 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 7 / 705 bytes (at speed 1048576)
+[2017-05-29 21:30:08,724 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:08,724 INFO Engine.jmeter.JTLReader] Changed data analysis delay to 3s
+[2017-05-29 21:30:08,727 DEBUG Engine.consolidator] Consolidator buffer[1]: [1496086205]
+[2017-05-29 21:30:08,727 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:08,733 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:08,733 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:08,769 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:08,769 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:08,769 DEBUG Engine] Iteration took 0.046 sec, sleeping for 0.954 sec...
+[2017-05-29 21:30:09,723 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:09,723 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:09,723 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:09,723 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:09,723 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 10 / 1010 bytes (at speed 1048576)
+[2017-05-29 21:30:09,723 DEBUG Engine.jmeter.JTLReader] Buffer len: 4
+[2017-05-29 21:30:09,723 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086206
+[2017-05-29 21:30:09,724 DEBUG Engine.consolidator] Consolidator buffer[2]: [1496086205, 1496086206]
+[2017-05-29 21:30:09,724 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:09,724 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:09,724 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:09,767 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:09,769 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:09,769 DEBUG Engine] Iteration took 0.046 sec, sleeping for 0.954 sec...
+[2017-05-29 21:30:10,721 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:10,721 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:10,721 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:10,721 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:10,721 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 11 / 1115 bytes (at speed 1048576)
+[2017-05-29 21:30:10,723 DEBUG Engine.jmeter.JTLReader] Buffer len: 4
+[2017-05-29 21:30:10,723 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086207
+[2017-05-29 21:30:10,723 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086205, 1496086206, 1496086207]
+[2017-05-29 21:30:10,723 DEBUG Engine.consolidator] Merging into 1496086205
+[2017-05-29 21:30:10,723 DEBUG Engine.consolidator] Merging 1496086205
+[2017-05-29 21:30:10,726 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/']
+[2017-05-29 21:30:10,726 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/']
+[2017-05-29 21:30:10,726 DEBUG Engine.consolidator] Processed datapoint: 1496086205/None
+[2017-05-29 21:30:10,726 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:10,732 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:10,732 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:10,779 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:10,779 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:10,780 DEBUG Engine] Iteration took 0.059 sec, sleeping for 0.941 sec...
+[2017-05-29 21:30:11,720 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:11,720 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:11,720 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:11,720 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:11,720 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 14 / 1430 bytes (at speed 1048576)
+[2017-05-29 21:30:11,721 DEBUG Engine.jmeter.JTLReader] Buffer len: 4
+[2017-05-29 21:30:11,721 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086208
+[2017-05-29 21:30:11,723 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086208, 1496086206, 1496086207]
+[2017-05-29 21:30:11,723 DEBUG Engine.consolidator] Merging into 1496086206
+[2017-05-29 21:30:11,723 DEBUG Engine.consolidator] Merging 1496086206
+[2017-05-29 21:30:11,726 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/']
+[2017-05-29 21:30:11,726 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/']
+[2017-05-29 21:30:11,726 DEBUG Engine.consolidator] Processed datapoint: 1496086206/None
+[2017-05-29 21:30:11,726 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:11,732 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:11,732 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:11,782 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:11,782 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:11,782 DEBUG Engine] Iteration took 0.061 sec, sleeping for 0.939 sec...
+[2017-05-29 21:30:12,720 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:12,720 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:12,720 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:12,720 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:12,720 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 16 / 1620 bytes (at speed 1048576)
+[2017-05-29 21:30:12,721 DEBUG Engine.jmeter.JTLReader] Buffer len: 4
+[2017-05-29 21:30:12,721 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086209
+[2017-05-29 21:30:12,723 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086208, 1496086209, 1496086207]
+[2017-05-29 21:30:12,723 DEBUG Engine.consolidator] Merging into 1496086207
+[2017-05-29 21:30:12,723 DEBUG Engine.consolidator] Merging 1496086207
+[2017-05-29 21:30:12,727 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:12,729 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:12,729 DEBUG Engine.consolidator] Processed datapoint: 1496086207/None
+[2017-05-29 21:30:12,729 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:12,733 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:12,733 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:12,783 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:12,783 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:12,783 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:13,721 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:13,721 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:13,721 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:13,721 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:13,721 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 20 / 2030 bytes (at speed 1048576)
+[2017-05-29 21:30:13,721 DEBUG Engine.jmeter.JTLReader] Buffer len: 4
+[2017-05-29 21:30:13,721 INFO Engine.jmeter.JTLReader] Changed data analysis delay to 2s
+[2017-05-29 21:30:13,724 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086210
+[2017-05-29 21:30:13,726 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086211
+[2017-05-29 21:30:13,729 DEBUG Engine.consolidator] Consolidator buffer[4]: [1496086208, 1496086209, 1496086210, 1496086211]
+[2017-05-29 21:30:13,729 DEBUG Engine.consolidator] Merging into 1496086208
+[2017-05-29 21:30:13,729 DEBUG Engine.consolidator] Merging 1496086208
+[2017-05-29 21:30:13,732 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:13,732 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:13,732 DEBUG Engine.consolidator] Processed datapoint: 1496086208/None
+[2017-05-29 21:30:13,733 DEBUG Engine.consolidator] Merging into 1496086209
+[2017-05-29 21:30:13,733 DEBUG Engine.consolidator] Merging 1496086209
+[2017-05-29 21:30:13,736 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:13,736 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:13,736 DEBUG Engine.consolidator] Processed datapoint: 1496086209/None
+[2017-05-29 21:30:13,736 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:13,742 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:13,742 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:13,801 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:13,801 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:13,801 DEBUG Engine] Iteration took 0.079 sec, sleeping for 0.921 sec...
+[2017-05-29 21:30:14,723 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:14,723 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:14,723 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:14,723 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:14,723 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 21 / 2155 bytes (at speed 1048576)
+[2017-05-29 21:30:14,723 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:14,723 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086212
+[2017-05-29 21:30:14,723 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086210, 1496086211, 1496086212]
+[2017-05-29 21:30:14,723 DEBUG Engine.consolidator] Merging into 1496086210
+[2017-05-29 21:30:14,723 DEBUG Engine.consolidator] Merging 1496086210
+[2017-05-29 21:30:14,723 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:14,723 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:14,723 DEBUG Engine.consolidator] Processed datapoint: 1496086210/None
+[2017-05-29 21:30:14,723 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:14,723 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:14,723 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:14,769 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:14,769 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:14,769 DEBUG Engine] Iteration took 0.047 sec, sleeping for 0.953 sec...
+[2017-05-29 21:30:15,723 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:15,723 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:15,724 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:15,724 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:15,724 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 24 / 2491 bytes (at speed 1048576)
+[2017-05-29 21:30:15,726 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:15,726 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086213
+[2017-05-29 21:30:15,729 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086211, 1496086212, 1496086213]
+[2017-05-29 21:30:15,729 DEBUG Engine.consolidator] Merging into 1496086211
+[2017-05-29 21:30:15,730 DEBUG Engine.consolidator] Merging 1496086211
+[2017-05-29 21:30:15,736 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:15,736 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:15,736 DEBUG Engine.consolidator] Processed datapoint: 1496086211/None
+[2017-05-29 21:30:15,736 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:15,743 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:15,743 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:15,811 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:15,811 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:15,811 DEBUG Engine] Iteration took 0.087 sec, sleeping for 0.913 sec...
+[2017-05-29 21:30:16,732 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:16,732 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:16,732 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:16,732 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:16,732 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 23 / 2393 bytes (at speed 1048576)
+[2017-05-29 21:30:16,732 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:16,732 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086214
+[2017-05-29 21:30:16,732 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086212, 1496086213, 1496086214]
+[2017-05-29 21:30:16,732 DEBUG Engine.consolidator] Merging into 1496086212
+[2017-05-29 21:30:16,732 DEBUG Engine.consolidator] Merging 1496086212
+[2017-05-29 21:30:16,732 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:16,732 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:16,732 DEBUG Engine.consolidator] Processed datapoint: 1496086212/None
+[2017-05-29 21:30:16,732 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:16,732 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:16,732 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:16,779 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:16,779 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:16,779 DEBUG Engine] Iteration took 0.047 sec, sleeping for 0.953 sec...
+[2017-05-29 21:30:17,739 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:17,739 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:17,739 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:17,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:17,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 23 / 2383 bytes (at speed 1048576)
+[2017-05-29 21:30:17,739 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:17,739 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086215
+[2017-05-29 21:30:17,739 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086213, 1496086214, 1496086215]
+[2017-05-29 21:30:17,739 DEBUG Engine.consolidator] Merging into 1496086213
+[2017-05-29 21:30:17,739 DEBUG Engine.consolidator] Merging 1496086213
+[2017-05-29 21:30:17,739 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:17,739 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:17,739 DEBUG Engine.consolidator] Processed datapoint: 1496086213/None
+[2017-05-29 21:30:17,739 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:17,739 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:17,739 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:17,802 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:17,802 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:17,802 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:18,739 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:18,739 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:18,739 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:18,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:18,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 24 / 2490 bytes (at speed 1048576)
+[2017-05-29 21:30:18,739 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:18,739 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086216
+[2017-05-29 21:30:18,739 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086214, 1496086215, 1496086216]
+[2017-05-29 21:30:18,739 DEBUG Engine.consolidator] Merging into 1496086214
+[2017-05-29 21:30:18,739 DEBUG Engine.consolidator] Merging 1496086214
+[2017-05-29 21:30:18,739 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:18,739 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:18,739 DEBUG Engine.consolidator] Processed datapoint: 1496086214/None
+[2017-05-29 21:30:18,739 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:18,739 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:18,739 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:18,802 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:18,802 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:18,802 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:19,739 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:19,739 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:19,739 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:19,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:19,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 25 / 2588 bytes (at speed 1048576)
+[2017-05-29 21:30:19,739 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:19,739 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086217
+[2017-05-29 21:30:19,739 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086215, 1496086216, 1496086217]
+[2017-05-29 21:30:19,739 DEBUG Engine.consolidator] Merging into 1496086215
+[2017-05-29 21:30:19,739 DEBUG Engine.consolidator] Merging 1496086215
+[2017-05-29 21:30:19,739 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:19,739 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:19,739 DEBUG Engine.consolidator] Processed datapoint: 1496086215/None
+[2017-05-29 21:30:19,739 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:19,739 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:19,739 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:19,802 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:19,802 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:19,802 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:20,739 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:20,739 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:20,739 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:20,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:20,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 24 / 2490 bytes (at speed 1048576)
+[2017-05-29 21:30:20,739 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:20,739 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086218
+[2017-05-29 21:30:20,739 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086216, 1496086217, 1496086218]
+[2017-05-29 21:30:20,739 DEBUG Engine.consolidator] Merging into 1496086216
+[2017-05-29 21:30:20,739 DEBUG Engine.consolidator] Merging 1496086216
+[2017-05-29 21:30:20,739 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:20,739 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:20,739 DEBUG Engine.consolidator] Processed datapoint: 1496086216/None
+[2017-05-29 21:30:20,739 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:20,739 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:20,739 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:20,786 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:20,786 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:20,786 DEBUG Engine] Iteration took 0.047 sec, sleeping for 0.953 sec...
+[2017-05-29 21:30:21,739 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:21,739 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:21,739 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:21,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:21,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 22 / 2287 bytes (at speed 1048576)
+[2017-05-29 21:30:21,739 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:21,739 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086219
+[2017-05-29 21:30:21,739 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086217, 1496086218, 1496086219]
+[2017-05-29 21:30:21,739 DEBUG Engine.consolidator] Merging into 1496086217
+[2017-05-29 21:30:21,739 DEBUG Engine.consolidator] Merging 1496086217
+[2017-05-29 21:30:21,739 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:21,739 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:21,739 DEBUG Engine.consolidator] Processed datapoint: 1496086217/None
+[2017-05-29 21:30:21,739 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:21,739 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:21,739 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:21,802 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:21,802 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:21,802 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:22,739 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:22,739 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:22,739 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:22,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:22,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 23 / 2383 bytes (at speed 1048576)
+[2017-05-29 21:30:22,739 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:22,739 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086220
+[2017-05-29 21:30:22,739 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086218, 1496086219, 1496086220]
+[2017-05-29 21:30:22,739 DEBUG Engine.consolidator] Merging into 1496086218
+[2017-05-29 21:30:22,739 DEBUG Engine.consolidator] Merging 1496086218
+[2017-05-29 21:30:22,739 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:22,739 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:22,739 DEBUG Engine.consolidator] Processed datapoint: 1496086218/None
+[2017-05-29 21:30:22,739 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:22,739 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:22,739 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:22,802 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:22,802 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:22,802 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:23,739 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:23,739 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:23,739 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:23,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:23,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 23 / 2383 bytes (at speed 1048576)
+[2017-05-29 21:30:23,739 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:23,739 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086221
+[2017-05-29 21:30:23,739 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086219, 1496086220, 1496086221]
+[2017-05-29 21:30:23,739 DEBUG Engine.consolidator] Merging into 1496086219
+[2017-05-29 21:30:23,739 DEBUG Engine.consolidator] Merging 1496086219
+[2017-05-29 21:30:23,739 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:23,739 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:23,739 DEBUG Engine.consolidator] Processed datapoint: 1496086219/None
+[2017-05-29 21:30:23,739 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:23,755 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:23,755 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:23,802 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:23,802 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:23,802 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:24,739 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:24,739 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:24,739 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:24,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:24,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 23 / 2394 bytes (at speed 1048576)
+[2017-05-29 21:30:24,739 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:24,739 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086222
+[2017-05-29 21:30:24,739 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086220, 1496086221, 1496086222]
+[2017-05-29 21:30:24,739 DEBUG Engine.consolidator] Merging into 1496086220
+[2017-05-29 21:30:24,739 DEBUG Engine.consolidator] Merging 1496086220
+[2017-05-29 21:30:24,755 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:24,755 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:24,755 DEBUG Engine.consolidator] Processed datapoint: 1496086220/None
+[2017-05-29 21:30:24,755 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:24,755 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:24,755 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:24,802 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:24,802 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:24,802 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:25,739 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:25,739 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:25,739 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:25,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:25,739 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 23 / 2383 bytes (at speed 1048576)
+[2017-05-29 21:30:25,739 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:25,739 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086223
+[2017-05-29 21:30:25,739 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086221, 1496086222, 1496086223]
+[2017-05-29 21:30:25,739 DEBUG Engine.consolidator] Merging into 1496086221
+[2017-05-29 21:30:25,739 DEBUG Engine.consolidator] Merging 1496086221
+[2017-05-29 21:30:25,755 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:25,755 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:25,755 DEBUG Engine.consolidator] Processed datapoint: 1496086221/None
+[2017-05-29 21:30:25,755 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:25,755 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:25,755 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:25,802 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:25,802 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:25,802 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:26,743 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:26,743 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:26,743 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:26,743 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:26,743 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 23 / 2384 bytes (at speed 1048576)
+[2017-05-29 21:30:26,743 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:26,743 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086224
+[2017-05-29 21:30:26,743 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086224, 1496086222, 1496086223]
+[2017-05-29 21:30:26,743 DEBUG Engine.consolidator] Merging into 1496086222
+[2017-05-29 21:30:26,743 DEBUG Engine.consolidator] Merging 1496086222
+[2017-05-29 21:30:26,743 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:26,743 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:26,743 DEBUG Engine.consolidator] Processed datapoint: 1496086222/None
+[2017-05-29 21:30:26,743 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:26,743 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:26,743 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:26,821 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:26,821 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:26,821 DEBUG Engine] Iteration took 0.078 sec, sleeping for 0.922 sec...
+[2017-05-29 21:30:27,743 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:27,743 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:27,743 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:27,743 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:27,743 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 21 / 2179 bytes (at speed 1048576)
+[2017-05-29 21:30:27,743 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:27,743 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086225
+[2017-05-29 21:30:27,743 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086224, 1496086225, 1496086223]
+[2017-05-29 21:30:27,743 DEBUG Engine.consolidator] Merging into 1496086223
+[2017-05-29 21:30:27,743 DEBUG Engine.consolidator] Merging 1496086223
+[2017-05-29 21:30:27,743 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:27,743 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:27,743 DEBUG Engine.consolidator] Processed datapoint: 1496086223/None
+[2017-05-29 21:30:27,743 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:27,743 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:27,743 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:27,805 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:27,805 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:27,805 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:28,755 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:28,755 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:28,755 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:28,755 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:28,755 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 27 / 2792 bytes (at speed 1048576)
+[2017-05-29 21:30:28,755 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:28,755 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086226
+[2017-05-29 21:30:28,755 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086224, 1496086225, 1496086226]
+[2017-05-29 21:30:28,755 DEBUG Engine.consolidator] Merging into 1496086224
+[2017-05-29 21:30:28,755 DEBUG Engine.consolidator] Merging 1496086224
+[2017-05-29 21:30:28,755 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:28,755 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:28,755 DEBUG Engine.consolidator] Processed datapoint: 1496086224/None
+[2017-05-29 21:30:28,755 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:28,755 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:28,755 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:28,818 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:28,818 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:28,818 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:29,755 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:29,755 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:29,755 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:29,755 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:29,755 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 21 / 2188 bytes (at speed 1048576)
+[2017-05-29 21:30:29,755 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:29,755 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086227
+[2017-05-29 21:30:29,755 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086225, 1496086226, 1496086227]
+[2017-05-29 21:30:29,755 DEBUG Engine.consolidator] Merging into 1496086225
+[2017-05-29 21:30:29,755 DEBUG Engine.consolidator] Merging 1496086225
+[2017-05-29 21:30:29,755 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:29,755 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:29,755 DEBUG Engine.consolidator] Processed datapoint: 1496086225/None
+[2017-05-29 21:30:29,755 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:29,755 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:29,755 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:29,818 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:29,818 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:29,818 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:30,755 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:30,755 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:30,755 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:30,755 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:30,755 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 25 / 2608 bytes (at speed 1048576)
+[2017-05-29 21:30:30,755 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:30,755 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086228
+[2017-05-29 21:30:30,755 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086226, 1496086227, 1496086228]
+[2017-05-29 21:30:30,755 DEBUG Engine.consolidator] Merging into 1496086226
+[2017-05-29 21:30:30,755 DEBUG Engine.consolidator] Merging 1496086226
+[2017-05-29 21:30:30,770 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:30,770 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:30,770 DEBUG Engine.consolidator] Processed datapoint: 1496086226/None
+[2017-05-29 21:30:30,770 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:30,770 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:30,786 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:30,832 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:30,832 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:30,832 DEBUG Engine] Iteration took 0.078 sec, sleeping for 0.922 sec...
+[2017-05-29 21:30:31,767 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:31,767 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:31,767 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:31,767 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:31,767 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 23 / 2373 bytes (at speed 1048576)
+[2017-05-29 21:30:31,767 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:31,767 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086229
+[2017-05-29 21:30:31,767 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086227, 1496086228, 1496086229]
+[2017-05-29 21:30:31,767 DEBUG Engine.consolidator] Merging into 1496086227
+[2017-05-29 21:30:31,767 DEBUG Engine.consolidator] Merging 1496086227
+[2017-05-29 21:30:31,767 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:31,767 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:31,767 DEBUG Engine.consolidator] Processed datapoint: 1496086227/None
+[2017-05-29 21:30:31,767 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:31,767 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:31,767 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:31,831 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:31,831 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:31,831 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:32,767 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:32,767 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:32,767 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:32,767 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:32,767 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 23 / 2383 bytes (at speed 1048576)
+[2017-05-29 21:30:32,767 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:32,767 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086230
+[2017-05-29 21:30:32,767 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086228, 1496086229, 1496086230]
+[2017-05-29 21:30:32,767 DEBUG Engine.consolidator] Merging into 1496086228
+[2017-05-29 21:30:32,767 DEBUG Engine.consolidator] Merging 1496086228
+[2017-05-29 21:30:32,767 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:32,767 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:32,767 DEBUG Engine.consolidator] Processed datapoint: 1496086228/None
+[2017-05-29 21:30:32,767 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:32,767 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:32,767 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:32,831 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:32,831 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:32,831 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:33,767 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:33,767 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:33,767 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:33,767 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:33,767 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 24 / 2480 bytes (at speed 1048576)
+[2017-05-29 21:30:33,767 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:33,767 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086231
+[2017-05-29 21:30:33,767 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086229, 1496086230, 1496086231]
+[2017-05-29 21:30:33,767 DEBUG Engine.consolidator] Merging into 1496086229
+[2017-05-29 21:30:33,767 DEBUG Engine.consolidator] Merging 1496086229
+[2017-05-29 21:30:33,767 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:33,767 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:33,767 DEBUG Engine.consolidator] Processed datapoint: 1496086229/None
+[2017-05-29 21:30:33,767 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:33,767 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:33,767 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:33,831 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:33,831 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:33,831 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:34,767 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:34,767 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:34,767 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:34,767 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:34,767 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 23 / 2404 bytes (at speed 1048576)
+[2017-05-29 21:30:34,767 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:34,767 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086232
+[2017-05-29 21:30:34,767 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086230, 1496086231, 1496086232]
+[2017-05-29 21:30:34,767 DEBUG Engine.consolidator] Merging into 1496086230
+[2017-05-29 21:30:34,767 DEBUG Engine.consolidator] Merging 1496086230
+[2017-05-29 21:30:34,767 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:34,767 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:34,767 DEBUG Engine.consolidator] Processed datapoint: 1496086230/None
+[2017-05-29 21:30:34,767 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:34,767 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:34,767 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:34,831 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:34,831 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:34,831 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:35,767 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:35,767 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:35,767 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:35,767 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:35,767 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 24 / 2490 bytes (at speed 1048576)
+[2017-05-29 21:30:35,767 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:35,767 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086233
+[2017-05-29 21:30:35,767 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086231, 1496086232, 1496086233]
+[2017-05-29 21:30:35,767 DEBUG Engine.consolidator] Merging into 1496086231
+[2017-05-29 21:30:35,767 DEBUG Engine.consolidator] Merging 1496086231
+[2017-05-29 21:30:35,767 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:35,767 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:35,767 DEBUG Engine.consolidator] Processed datapoint: 1496086231/None
+[2017-05-29 21:30:35,767 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:35,767 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:35,767 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:35,831 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:35,831 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:35,831 DEBUG Engine] Iteration took 0.063 sec, sleeping for 0.937 sec...
+[2017-05-29 21:30:36,766 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:36,766 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:36,767 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:36,767 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:36,767 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 24 / 2491 bytes (at speed 1048576)
+[2017-05-29 21:30:36,769 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:36,769 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086234
+[2017-05-29 21:30:36,773 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086232, 1496086233, 1496086234]
+[2017-05-29 21:30:36,773 DEBUG Engine.consolidator] Merging into 1496086232
+[2017-05-29 21:30:36,775 DEBUG Engine.consolidator] Merging 1496086232
+[2017-05-29 21:30:36,785 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:36,785 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:36,785 DEBUG Engine.consolidator] Processed datapoint: 1496086232/None
+[2017-05-29 21:30:36,785 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:36,795 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:36,795 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:36,868 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:36,868 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:36,868 DEBUG Engine] Iteration took 0.101 sec, sleeping for 0.899 sec...
+[2017-05-29 21:30:37,769 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:37,769 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:37,769 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:37,769 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:37,769 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 24 / 2500 bytes (at speed 1048576)
+[2017-05-29 21:30:37,769 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:37,769 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086235
+[2017-05-29 21:30:37,769 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086233, 1496086234, 1496086235]
+[2017-05-29 21:30:37,769 DEBUG Engine.consolidator] Merging into 1496086233
+[2017-05-29 21:30:37,769 DEBUG Engine.consolidator] Merging 1496086233
+[2017-05-29 21:30:37,769 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:37,769 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:37,769 DEBUG Engine.consolidator] Processed datapoint: 1496086233/None
+[2017-05-29 21:30:37,769 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:37,769 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:37,769 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:37,815 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:37,815 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:37,815 DEBUG Engine] Iteration took 0.046 sec, sleeping for 0.954 sec...
+[2017-05-29 21:30:38,776 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:38,776 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:38,776 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:38,776 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:38,776 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 24 / 2491 bytes (at speed 1048576)
+[2017-05-29 21:30:38,776 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:38,776 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086236
+[2017-05-29 21:30:38,776 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086234, 1496086235, 1496086236]
+[2017-05-29 21:30:38,776 DEBUG Engine.consolidator] Merging into 1496086234
+[2017-05-29 21:30:38,776 DEBUG Engine.consolidator] Merging 1496086234
+[2017-05-29 21:30:38,776 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:38,776 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:38,776 DEBUG Engine.consolidator] Processed datapoint: 1496086234/None
+[2017-05-29 21:30:38,776 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:38,790 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:38,790 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:38,838 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:38,838 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:38,838 DEBUG Engine] Iteration took 0.062 sec, sleeping for 0.938 sec...
+[2017-05-29 21:30:39,776 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:39,776 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:39,776 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:39,776 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:39,776 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 22 / 2276 bytes (at speed 1048576)
+[2017-05-29 21:30:39,776 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:39,776 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086237
+[2017-05-29 21:30:39,776 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086235, 1496086236, 1496086237]
+[2017-05-29 21:30:39,776 DEBUG Engine.consolidator] Merging into 1496086235
+[2017-05-29 21:30:39,776 DEBUG Engine.consolidator] Merging 1496086235
+[2017-05-29 21:30:39,776 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:39,776 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:39,776 DEBUG Engine.consolidator] Processed datapoint: 1496086235/None
+[2017-05-29 21:30:39,776 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:39,776 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:39,776 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:39,838 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:39,838 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:39,838 DEBUG Engine] Iteration took 0.062 sec, sleeping for 0.938 sec...
+[2017-05-29 21:30:40,776 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:40,776 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:40,776 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:40,776 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:40,776 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 24 / 2480 bytes (at speed 1048576)
+[2017-05-29 21:30:40,776 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:40,776 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086238
+[2017-05-29 21:30:40,776 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086236, 1496086237, 1496086238]
+[2017-05-29 21:30:40,776 DEBUG Engine.consolidator] Merging into 1496086236
+[2017-05-29 21:30:40,776 DEBUG Engine.consolidator] Merging 1496086236
+[2017-05-29 21:30:40,776 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:40,776 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:40,776 DEBUG Engine.consolidator] Processed datapoint: 1496086236/None
+[2017-05-29 21:30:40,776 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:40,776 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:40,776 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:40,838 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:40,838 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:40,838 DEBUG Engine] Iteration took 0.062 sec, sleeping for 0.938 sec...
+[2017-05-29 21:30:41,776 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:41,776 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:41,776 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:41,776 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:41,776 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 21 / 2179 bytes (at speed 1048576)
+[2017-05-29 21:30:41,776 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:41,776 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086239
+[2017-05-29 21:30:41,776 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086237, 1496086238, 1496086239]
+[2017-05-29 21:30:41,776 DEBUG Engine.consolidator] Merging into 1496086237
+[2017-05-29 21:30:41,776 DEBUG Engine.consolidator] Merging 1496086237
+[2017-05-29 21:30:41,776 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:41,776 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:41,776 DEBUG Engine.consolidator] Processed datapoint: 1496086237/None
+[2017-05-29 21:30:41,776 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:41,776 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:41,776 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:41,838 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:41,838 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:41,838 DEBUG Engine] Iteration took 0.062 sec, sleeping for 0.938 sec...
+[2017-05-29 21:30:42,776 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:42,776 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:42,776 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:42,776 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:42,776 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 26 / 2705 bytes (at speed 1048576)
+[2017-05-29 21:30:42,776 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:42,776 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086240
+[2017-05-29 21:30:42,776 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086240, 1496086238, 1496086239]
+[2017-05-29 21:30:42,776 DEBUG Engine.consolidator] Merging into 1496086238
+[2017-05-29 21:30:42,776 DEBUG Engine.consolidator] Merging 1496086238
+[2017-05-29 21:30:42,776 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:42,776 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:42,776 DEBUG Engine.consolidator] Processed datapoint: 1496086238/None
+[2017-05-29 21:30:42,776 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:42,776 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:42,776 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:42,838 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:42,838 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:42,838 DEBUG Engine] Iteration took 0.062 sec, sleeping for 0.938 sec...
+[2017-05-29 21:30:43,776 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:43,776 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:43,776 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:43,776 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:43,776 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 21 / 2179 bytes (at speed 1048576)
+[2017-05-29 21:30:43,776 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:43,776 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086241
+[2017-05-29 21:30:43,776 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086240, 1496086241, 1496086239]
+[2017-05-29 21:30:43,776 DEBUG Engine.consolidator] Merging into 1496086239
+[2017-05-29 21:30:43,776 DEBUG Engine.consolidator] Merging 1496086239
+[2017-05-29 21:30:43,776 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:43,776 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:43,776 DEBUG Engine.consolidator] Processed datapoint: 1496086239/None
+[2017-05-29 21:30:43,776 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:43,776 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:43,776 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:43,838 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:43,838 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:43,838 DEBUG Engine] Iteration took 0.062 sec, sleeping for 0.938 sec...
+[2017-05-29 21:30:44,776 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:44,776 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:44,776 DEBUG Engine.jmeter.JTLErrorsReader] File not exists: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:44,776 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:44,776 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 24 / 2491 bytes (at speed 1048576)
+[2017-05-29 21:30:44,776 DEBUG Engine.jmeter.JTLReader] Buffer len: 3
+[2017-05-29 21:30:44,776 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086242
+[2017-05-29 21:30:44,776 DEBUG Engine.consolidator] Consolidator buffer[3]: [1496086240, 1496086241, 1496086242]
+[2017-05-29 21:30:44,776 DEBUG Engine.consolidator] Merging into 1496086240
+[2017-05-29 21:30:44,776 DEBUG Engine.consolidator] Merging 1496086240
+[2017-05-29 21:30:44,776 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:44,776 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:44,776 DEBUG Engine.consolidator] Processed datapoint: 1496086240/None
+[2017-05-29 21:30:44,776 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:44,776 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:44,776 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:44,838 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:44,838 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:44,838 DEBUG Engine] Iteration took 0.062 sec, sleeping for 0.938 sec...
+[2017-05-29 21:30:45,789 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:45,789 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:45,789 DEBUG Engine.jmeter.JTLErrorsReader] Opening C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\error.jtl
+[2017-05-29 21:30:45,789 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:45,789 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 16 / 1645 bytes (at speed 1048576)
+[2017-05-29 21:30:45,789 DEBUG Engine.jmeter.JTLReader] Buffer len: 2
+[2017-05-29 21:30:45,789 DEBUG Engine.consolidator] Consolidator buffer[2]: [1496086241, 1496086242]
+[2017-05-29 21:30:45,789 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:45,789 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:45,789 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:45,867 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:45,867 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:45,867 DEBUG Engine] Iteration took 0.078 sec, sleeping for 0.922 sec...
+[2017-05-29 21:30:46,789 DEBUG Engine] Checking <bzt.modules.provisioning.Local object at 0x000000000430F780>
+[2017-05-29 21:30:46,789 DEBUG Engine] Checking <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000000000430FDD8>
+[2017-05-29 21:30:46,789 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:46,789 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 0 / 0 bytes (at speed 1048576)
+[2017-05-29 21:30:46,789 DEBUG Engine.jmeter.JTLReader] Buffer len: 2
+[2017-05-29 21:30:46,789 DEBUG Engine.consolidator] Consolidator buffer[2]: [1496086241, 1496086242]
+[2017-05-29 21:30:46,789 DEBUG Engine] Checking <bzt.modules.monitoring.Monitoring object at 0x0000000004482A90>
+[2017-05-29 21:30:46,789 DEBUG Engine] Checking <bzt.modules.reporting.FinalStatus object at 0x00000000044F8898>
+[2017-05-29 21:30:46,789 DEBUG Engine] Checking <bzt.modules.console.ConsoleStatusReporter object at 0x000000000451F908>
+[2017-05-29 21:30:46,851 DEBUG Engine] Checking <bzt.modules.reporting.JUnitXMLReporter object at 0x0000000004565BE0>
+[2017-05-29 21:30:46,851 DEBUG Engine] Checking <bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>
+[2017-05-29 21:30:46,851 DEBUG Engine.Configuration] Dumping YAML config into C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\effective.yml
+[2017-05-29 21:30:46,881 DEBUG Engine.Configuration] Dumping JSON config into C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\effective.json
+[2017-05-29 21:30:46,881 WARNING Engine] Please wait for graceful shutdown...
+[2017-05-29 21:30:46,881 INFO Engine] Shutting down...
+[2017-05-29 21:30:46,881 DEBUG Engine.local] Shutdown jmeter/simple
+[2017-05-29 21:30:46,898 DEBUG Engine.console] No logger_handler or orig_stream was detected
+[2017-05-29 21:30:46,913 DEBUG Engine.Configuration] Dumping YAML config into C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\effective.yml
+[2017-05-29 21:30:46,944 DEBUG Engine.Configuration] Dumping JSON config into C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\effective.json
+[2017-05-29 21:30:46,944 INFO Engine] Post-processing...
+[2017-05-29 21:30:46,944 DEBUG Engine.local] Post-process jmeter/simple
+[2017-05-29 21:30:46,944 DEBUG Engine] Add existing artifact (move=True): C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\modified_requests.jmx
+[2017-05-29 21:30:46,944 DEBUG Engine] No need to copy C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\modified_requests.jmx
+[2017-05-29 21:30:46,944 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Reading JTL: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\kpi.jtl
+[2017-05-29 21:30:46,944 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader] Read lines: 0 / 0 bytes (at speed 1048576)
+[2017-05-29 21:30:46,944 DEBUG Engine.jmeter.JTLReader] Buffer len: 2
+[2017-05-29 21:30:46,944 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086243
+[2017-05-29 21:30:46,944 DEBUG Engine.jmeter.JTLReader] Aggregating: 1496086244
+[2017-05-29 21:30:46,944 DEBUG Engine.consolidator] Consolidator buffer[4]: [1496086241, 1496086242, 1496086243, 1496086244]
+[2017-05-29 21:30:46,944 DEBUG Engine.consolidator] Merging into 1496086241
+[2017-05-29 21:30:46,944 DEBUG Engine.consolidator] Merging 1496086241
+[2017-05-29 21:30:46,960 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:46,960 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:46,960 DEBUG Engine.consolidator] Processed datapoint: 1496086241/None
+[2017-05-29 21:30:46,960 DEBUG Engine.consolidator] Merging into 1496086242
+[2017-05-29 21:30:46,960 DEBUG Engine.consolidator] Merging 1496086242
+[2017-05-29 21:30:46,960 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:46,960 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:46,960 DEBUG Engine.consolidator] Processed datapoint: 1496086242/None
+[2017-05-29 21:30:46,960 DEBUG Engine.consolidator] Merging into 1496086243
+[2017-05-29 21:30:46,960 DEBUG Engine.consolidator] Merging 1496086243
+[2017-05-29 21:30:46,976 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:46,976 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:46,976 DEBUG Engine.consolidator] Processed datapoint: 1496086243/None
+[2017-05-29 21:30:46,976 DEBUG Engine.consolidator] Merging into 1496086244
+[2017-05-29 21:30:46,976 DEBUG Engine.consolidator] Merging 1496086244
+[2017-05-29 21:30:46,976 DEBUG root] No label IndexPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:46,976 DEBUG root] No label CheckoutPage in ['', u'https://prtbl.herokuapp.com/elements/', u'https://prtbl.herokuapp.com/', u'https://prtbl.herokuapp.com/elements/1']
+[2017-05-29 21:30:46,976 DEBUG Engine.consolidator] Processed datapoint: 1496086244/None
+[2017-05-29 21:30:46,976 INFO Engine.final_stats] Test duration: 0:00:43
+[2017-05-29 21:30:46,976 INFO Engine.final_stats] Samples count: 822, 0.00% failures
+[2017-05-29 21:30:46,976 INFO Engine.final_stats] Average times: total 0.186, latency 0.186, connect 0.000
+[2017-05-29 21:30:46,992 INFO Engine.final_stats] Percentile 0.0%: 0.118
+[2017-05-29 21:30:46,992 INFO Engine.final_stats] Percentile 50.0%: 0.126
+[2017-05-29 21:30:46,992 INFO Engine.final_stats] Percentile 90.0%: 0.367
+[2017-05-29 21:30:46,992 INFO Engine.final_stats] Percentile 95.0%: 0.375
+[2017-05-29 21:30:46,992 INFO Engine.final_stats] Percentile 99.0%: 0.641
+[2017-05-29 21:30:46,992 INFO Engine.final_stats] Percentile 99.9%: 1.399
+[2017-05-29 21:30:46,992 INFO Engine.final_stats] Percentile 100.0%: 1.399
+[2017-05-29 21:30:47,006 DEBUG Engine.console] No logger_handler or orig_stream was detected
+[2017-05-29 21:30:47,006 DEBUG Engine.junit-xml] Processing passfail objects: [<bzt.modules.passfail.PassFailStatus object at 0x0000000004565B38>]
+[2017-05-29 21:30:47,006 INFO Engine.junit-xml] Writing JUnit XML report into: .\junit\prtbl-prod.xml
+[2017-05-29 21:30:47,006 DEBUG Engine.Configuration] Dumping YAML config into C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\effective.yml
+[2017-05-29 21:30:47,038 DEBUG Engine.Configuration] Dumping JSON config into C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000\effective.json
+[2017-05-29 21:30:47,038 INFO root] Artifacts dir: C:\dev\projects\periodic-table\2017-05-29_21-30-02.642000
+[2017-05-29 21:30:47,053 INFO root] Done performing with code: 0
+[2017-05-29 21:30:47,053 DEBUG root] Closing log handler: C:\dev\projects\periodic-table\bzt.log

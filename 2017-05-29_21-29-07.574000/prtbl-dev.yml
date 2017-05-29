@@ -1,0 +1,22 @@
+---
+execution:
+- concurrency: 10
+  ramp-up: 10s
+  hold-for: 30s
+  scenario: simple
+  
+scenarios:
+  simple:
+    think-time: 0.25
+    requests:
+    - http://localhost:8080/
+    - http://localhost:8080/elements/
+    - http://localhost:8080/elements/1
+reporting:
+- module: junit-xml
+  filename: .\junit\prtbl-dev.xml
+  data-source: pass-fail
+- module: passfail
+  criteria:
+    - avg-rt of IndexPage>150ms for 5s, stop as failed
+    - fail of CheckoutPage>50% for 5s, stop as failed

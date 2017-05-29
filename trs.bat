@@ -1,0 +1,1 @@
+bzt ./src/test/taurus/prtbl-%1.yml
