@@ -45,20 +45,22 @@
     <hudson.tasks.Shell>
       <command>mkdir log
 C:/dev/apache-jmeter-3.2/bin/jmeter.bat -n -t ./src/test/jmeter/tests/elements.jmx -q ./src/test/jmeter/properties/misc.properties -q ./src/test/jmeter/properties/env/$env.properties -l ./elements-$env.log -e -o ./log
+mkdir clog
+C:/dev/apache-jmeter-3.2/bin/jmeter.bat -n -t ./src/test/jmeter/tests/crud.jmx -q ./src/test/jmeter/properties/misc.properties -q ./src/test/jmeter/properties/env/$env.properties -l ./crud-$env.log -e -o ./clog
 mkdir logs
 C:/dev/apache-jmeter-3.2/bin/jmeter.bat -n -t ./src/test/jmeter/tests/prtbl.jmx -q ./src/test/jmeter/properties/misc.properties -q ./src/test/jmeter/properties/env/$env.properties -l ./prtbl-$env.log -e -o ./logs</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
     <hudson.tasks.ArtifactArchiver>
-      <artifacts>*.log, log/**/*, logs/**/*</artifacts>
+      <artifacts>*.log, log/**/*, clog/**/*, logs/**/*</artifacts>
       <allowEmptyArchive>false</allowEmptyArchive>
       <onlyIfSuccessful>false</onlyIfSuccessful>
       <fingerprint>false</fingerprint>
       <defaultExcludes>true</defaultExcludes>
       <caseSensitive>true</caseSensitive>
     </hudson.tasks.ArtifactArchiver>
-    <hudson.plugins.performance.PerformancePublisher plugin="performance@3.0">
+    <hudson.plugins.performance.PerformancePublisher plugin="performance@3.1">
       <errorFailedThreshold>3</errorFailedThreshold>
       <errorUnstableThreshold>1</errorUnstableThreshold>
       <errorUnstableResponseTimeThreshold></errorUnstableResponseTimeThreshold>
@@ -69,9 +71,11 @@ C:/dev/apache-jmeter-3.2/bin/jmeter.bat -n -t ./src/test/jmeter/tests/prtbl.jmx 
       <nthBuildNumber>0</nthBuildNumber>
       <modeRelativeThresholds>false</modeRelativeThresholds>
       <configType>ART</configType>
+      <graphType>ART</graphType>
       <modeOfThreshold>false</modeOfThreshold>
       <failBuildIfNoResultFile>false</failBuildIfNoResultFile>
       <compareBuildPrevious>false</compareBuildPrevious>
+      <optionType>ART</optionType>
       <xml></xml>
       <modePerformancePerTestCase>true</modePerformancePerTestCase>
       <modeThroughput>true</modeThroughput>
