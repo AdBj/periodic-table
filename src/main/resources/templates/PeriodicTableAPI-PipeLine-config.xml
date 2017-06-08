@@ -22,26 +22,35 @@
       </triggers>
     </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
   </properties>
-  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.30">
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.32">
     <script>node {
     stage(&apos;checkout&apos;) {
         git &apos;https://github.com/AdBj/periodic-table.git&apos;
     }
+    /*
     stage(&apos;sonar&apos;) {
         build job: &apos;prtbl-sonar&apos;
     }
+    */
+    /*
     stage(&apos;pitest&apos;) {
-        bat &apos;mvn clean test org.pitest:pitest-maven:mutationCoverage&apos;
-        // build job: &apos;prtbl-mutational&apos;
+        // bat &apos;mvn clean test org.pitest:pitest-maven:mutationCoverage&apos;
+        build job: &apos;prtbl-mutational&apos;
     }
+    */
     stage(&apos;build&apos;) {
         bat &apos;mvn clean compile install package&apos;
     }
     stage(&apos;dev&apos;) {
         parallel run: {
             bat &apos;java -jar target/prtbl-0.0.1-SNAPSHOT.jar&apos;
-        }, test: {
+        /*
+        }, performance: {
             sleep 15
+            build job: &apos;prtbl-taurus&apos;
+        */
+        }, test: {
+            sleep 30
             build job: &apos;prtbl-test&apos;
         },
         failFast: true
@@ -55,6 +64,18 @@
         },
         failFast: true
     }
+    /*
+    stage(&apos;performance&apos;) {
+        build job: &apos;prtbl-taurus&apos;, parameters: [[$class: &apos;StringParameterValue&apos;, name: &apos;env&apos;, value: &apos;prod&apos;]]
+    }
+    */
+    /*
+    stage(&apos;AutoMagicTest&apos;) {
+        dir(&apos;C:/dev/AutoMagicTest/&apos;) {
+          bat &apos;AutoMagicTest.exe&apos;
+        }
+    }
+    */
 }</script>
     <sandbox>true</sandbox>
   </definition>

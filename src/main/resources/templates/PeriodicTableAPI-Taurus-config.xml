@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>Periodic Table API test using JMeter</description>
-  <displayName>Periodic Table API Tests</displayName>
+  <description>Periodic Table API performance test using Taurus</description>
+  <displayName>Periodic Table API Performance Tests</displayName>
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.27.0">
@@ -43,15 +43,12 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>mkdir log
-C:/dev/apache-jmeter-3.2/bin/jmeter.bat -n -t ./src/test/jmeter/tests/elements.jmx -q ./src/test/jmeter/properties/misc.properties -q ./src/test/jmeter/properties/env/$env.properties -l ./elements-$env.log -e -o ./log
-mkdir logs
-C:/dev/apache-jmeter-3.2/bin/jmeter.bat -n -t ./src/test/jmeter/tests/prtbl.jmx -q ./src/test/jmeter/properties/misc.properties -q ./src/test/jmeter/properties/env/$env.properties -l ./prtbl-$env.log -e -o ./logs</command>
+      <command>C:/dev/blazemeter/Taurus/bin/bzt.exe ./src/test/taurus/prtbl-$env.yml -report</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
     <hudson.tasks.ArtifactArchiver>
-      <artifacts>*.log, log/**/*, logs/**/*</artifacts>
+      <artifacts>junit/*</artifacts>
       <allowEmptyArchive>false</allowEmptyArchive>
       <onlyIfSuccessful>false</onlyIfSuccessful>
       <fingerprint>false</fingerprint>
@@ -79,7 +76,7 @@ C:/dev/apache-jmeter-3.2/bin/jmeter.bat -n -t ./src/test/jmeter/tests/prtbl.jmx 
       <ignoreFailedBuilds>false</ignoreFailedBuilds>
       <ignoreUnstableBuilds>false</ignoreUnstableBuilds>
       <persistConstraintLog>false</persistConstraintLog>
-      <sourceDataFiles></sourceDataFiles>
+      <sourceDataFiles>junit/prtbl-$env.xml</sourceDataFiles>
     </hudson.plugins.performance.PerformancePublisher>
   </publishers>
   <buildWrappers>
